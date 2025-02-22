@@ -52,6 +52,17 @@ import {
 } from './phone-number';
 
 /**
+ * Import ICE validation utilities
+ */
+import {
+  isValidICE,
+  sanitizeICE,
+  validateICE,
+  validateControl,
+  generateTestICE,
+} from './ice';
+
+/**
  * Namespace containing all CIN-related validation functions
  */
 const cin = {
@@ -100,6 +111,17 @@ const phone = {
 };
 
 /**
+ * Namespace containing all ICE-related validation functions
+ */
+const ice = {
+  validateICE,
+  sanitizeICE,
+  isValidICE,
+  validateControl,
+  generateTestICE,
+};
+
+/**
  * Collection of all validator namespaces
  */
 export const validators = {
@@ -107,6 +129,7 @@ export const validators = {
   passport,
   bank,
   phone,
+  ice,
 };
 
 /**
@@ -149,4 +172,15 @@ export {
   maskPhone,
   arePhoneNumbersEqual,
   sanitizePhone,
+};
+
+/**
+ * Direct exports of ICE number validation functions for granular imports
+ */
+export {
+  isValidICE,
+  sanitizeICE,
+  validateICE,
+  validateControl,
+  generateTestICE,
 };

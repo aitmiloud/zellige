@@ -44,7 +44,7 @@ describe('Bank Validators', () => {
 
   describe('isValidRIB', () => {
     it('should validate a correct RIB', () => {
-      expect(isValidRIB('0070000000000000000001789')).toBe(true);
+      expect(isValidRIB('007000000000000000000149')).toBe(true);
     });
 
     it('should invalidate an incorrect RIB', () => {

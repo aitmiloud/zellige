@@ -9,6 +9,11 @@
 import { extractCINMetadata } from './cin';
 
 /**
+ * Import ICE extraction utilities
+ */
+import { extractICEComponents } from './ice';
+
+/**
  * Namespace containing all CIN-related extraction functions
  */
 const cin = {
@@ -16,10 +21,18 @@ const cin = {
 };
 
 /**
+ * Namespace containing all ICE-related extraction functions
+ */
+const ice = {
+  extract: extractICEComponents,
+};
+
+/**
  * Collection of all extractor namespaces
  */
 export const extractors = {
   cin,
+  ice,
 };
 
 /**
@@ -32,3 +45,8 @@ export default extractors;
  * Direct exports of CIN extraction functions for granular imports
  */
 export { extractCINMetadata };
+
+/**
+ * Direct exports of ICE extraction functions for granular imports
+ */
+export { extractICEComponents };
