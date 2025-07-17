@@ -26,16 +26,26 @@ jobs:
       fail-fast: false
       matrix:
         language: ["javascript"]
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build (optional)
+        run: npm run build || true
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
+        uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v2
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
+        uses: github/codeql-action/analyze@v3
