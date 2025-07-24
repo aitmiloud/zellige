@@ -69,6 +69,13 @@ const result = validateCIN('AB123456');
 - 🛂 Moroccan passport validation
 - 🔍 Series and number validation
 
+### License Plate Utilities
+
+- 🚗 Moroccan License Plate Verification
+- 🗾 Get Regions of License plates
+- 📝 Format Normalization
+- ⚡ Support for all Moroccan License Plates (_NORMAL_, _DIPLOMATIC_, _POLICE_, ...)
+
 ## 💻 Installation
 
 ```bash

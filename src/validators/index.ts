@@ -52,6 +52,10 @@ import {
 } from './phone-number';
 
 /**
+ * Import license plate validation utilities
+ */
+import { validateLicensePlate } from './license-plate';
+/**
  * Namespace containing all CIN-related validation functions
  */
 const cin = {
@@ -100,6 +104,12 @@ const phone = {
 };
 
 /**
+ * Namespace containing all license plate-related validation functions
+ */
+const licensePlate = {
+  validate: validateLicensePlate,
+};
+/**
  * Collection of all validator namespaces
  */
 export const validators = {
@@ -107,6 +117,7 @@ export const validators = {
   passport,
   bank,
   phone,
+  licensePlate,
 };
 
 /**
@@ -150,3 +161,8 @@ export {
   arePhoneNumbersEqual,
   sanitizePhone,
 };
+
+/**
+ * Direct exports of license plate validation functions for granular imports
+ */
+export { validateLicensePlate };
