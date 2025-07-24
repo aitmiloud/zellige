@@ -52,6 +52,17 @@ import {
 } from './phone-number';
 
 /**
+ * Import ICE validation utilities
+ */
+import {
+  isValidICE,
+  sanitizeICE,
+  validateICE,
+  validateControl,
+  generateTestICE,
+} from './ice';
+
+/**
  * Import license plate validation utilities
  */
 import {
@@ -115,6 +126,17 @@ const phone = {
 };
 
 /**
+ * Namespace containing all ICE-related validation functions
+ */
+const ice = {
+  validateICE,
+  sanitizeICE,
+  isValidICE,
+  validateControl,
+  generateTestICE,
+};
+
+/**
  * Namespace containing all license plate-related validation functions
  */
 const licensePlate = {
@@ -137,6 +159,7 @@ export const validators = {
   passport,
   bank,
   phone,
+  ice,
   licensePlate,
 };
 
@@ -180,6 +203,17 @@ export {
   maskPhone,
   arePhoneNumbersEqual,
   sanitizePhone,
+};
+
+/**
+ * Direct exports of ICE number validation functions for granular imports
+ */
+export {
+  isValidICE,
+  sanitizeICE,
+  validateICE,
+  validateControl,
+  generateTestICE,
 };
 
 /**

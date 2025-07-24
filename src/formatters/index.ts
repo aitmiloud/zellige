@@ -14,13 +14,32 @@ import {
 } from './cin';
 
 /**
+ * Import ICE formatting utilities
+ */
+import {
+  formatICE,
+  formatICEWhileTyping,
+  unformatICE,
+  ICEFormattingError,
+} from './ice';
+
+/**
  * Namespace containing all CIN-related formatting functions
  */
 const cin = {
   format: formatCIN,
-  getAllFormats: getAllCINFormats,
   Formatter: CINFormatter,
   FormattingError: CINFormattingError,
+};
+
+/**
+ * Namespace containing all ICE-related formatting functions
+ */
+const ice = {
+  format: formatICE,
+  formatWhileTyping: formatICEWhileTyping,
+  unformat: unformatICE,
+  FormattingError: ICEFormattingError,
 };
 
 /**
@@ -28,6 +47,7 @@ const cin = {
  */
 export const formatters = {
   cin,
+  ice,
 };
 
 /**
@@ -40,3 +60,8 @@ export default formatters;
  * Direct exports of CIN formatting functions and classes for granular imports
  */
 export { formatCIN, getAllCINFormats, CINFormatter, CINFormattingError };
+
+/**
+ * Direct exports of ICE formatting functions and classes for granular imports
+ */
+export { formatICE, formatICEWhileTyping, unformatICE, ICEFormattingError };
