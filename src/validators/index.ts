@@ -54,7 +54,18 @@ import {
 /**
  * Import license plate validation utilities
  */
-import { validateLicensePlate } from './license-plate';
+import {
+  validateLicensePlate,
+  sanitizeLicensePlate,
+  isValidLicensePlate,
+  getLicensePlateType,
+  getLicensePlateRegion,
+  getLicensePlateMetadata,
+  getLicensePlateName,
+  getAllRegions,
+  getAllDiplomaticRegions,
+  getAllLicensePlateTypes,
+} from './license-plate';
 /**
  * Namespace containing all CIN-related validation functions
  */
@@ -108,6 +119,15 @@ const phone = {
  */
 const licensePlate = {
   validate: validateLicensePlate,
+  sanitize: sanitizeLicensePlate,
+  isValid: isValidLicensePlate,
+  getType: getLicensePlateType,
+  getRegion: getLicensePlateRegion,
+  getMetadata: getLicensePlateMetadata,
+  getName: getLicensePlateName,
+  getAllRegions: getAllRegions,
+  getAllDiplomaticRegions: getAllDiplomaticRegions,
+  getAllTypes: getAllLicensePlateTypes,
 };
 /**
  * Collection of all validator namespaces
@@ -165,4 +185,15 @@ export {
 /**
  * Direct exports of license plate validation functions for granular imports
  */
-export { validateLicensePlate };
+export {
+  validateLicensePlate,
+  sanitizeLicensePlate,
+  isValidLicensePlate,
+  getLicensePlateType,
+  getLicensePlateRegion,
+  getLicensePlateMetadata,
+  getLicensePlateName,
+  getAllRegions,
+  getAllDiplomaticRegions,
+  getAllLicensePlateTypes,
+};

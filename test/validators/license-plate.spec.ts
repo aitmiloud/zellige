@@ -510,7 +510,6 @@ describe('License Plate Validator', () => {
       test('should validate valid NORMAL license plates', () => {
         testCases.NORMAL.valid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 Valid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(true);
           expect(result.error).toBeUndefined();
           expect(result.metadata?.type).toBe('NORMAL');
@@ -522,7 +521,6 @@ describe('License Plate Validator', () => {
       test('should invalidate invalid NORMAL license plates', () => {
         testCases.NORMAL.invalid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 invalid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(false);
           expect(result.error).toBeDefined();
           // Error should be one of: INVALID_SEQUENCE, INVALID_CHARACTERS, INVALID_REGION
@@ -539,7 +537,6 @@ describe('License Plate Validator', () => {
       test('should validate valid TRAILER license plates', () => {
         testCases.TRAILER.valid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 Valid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(true);
           expect(result.error).toBeUndefined();
           expect(result.metadata?.type).toBe('TRAILER');
@@ -551,7 +548,6 @@ describe('License Plate Validator', () => {
       test('should invalidate invalid TRAILER license plates', () => {
         testCases.TRAILER.invalid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 invalid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(false);
           expect(result.error).toBeDefined();
           // Error should be INVALID_SEQUENCE or INVALID_REGION
@@ -568,7 +564,6 @@ describe('License Plate Validator', () => {
       test('should validate valid DEALER_W18 license plates', () => {
         testCases.DEALER_W18.valid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 Valid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(true);
           expect(result.error).toBeUndefined();
           expect(result.metadata?.type).toBe('DEALER_W18');
@@ -582,7 +577,6 @@ describe('License Plate Validator', () => {
       test('should invalidate invalid DEALER_W18 license plates', () => {
         testCases.DEALER_W18.invalid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 invalid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(false);
           expect(result.error).toBeDefined();
           // Error should be INVALID_SEQUENCE or INVALID_FORMAT
@@ -599,7 +593,6 @@ describe('License Plate Validator', () => {
       test('should validate valid TEMPORARY_WW license plates', () => {
         testCases.TEMPORARY_WW.valid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 Valid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(true);
           expect(result.error).toBeUndefined();
           expect(result.metadata?.type).toBe('TEMPORARY_WW');
@@ -611,7 +604,6 @@ describe('License Plate Validator', () => {
       test('should invalidate invalid TEMPORARY_WW license plates', () => {
         testCases.TEMPORARY_WW.invalid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 invalid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(false);
           expect(result.error).toBeDefined();
           // Error should be INVALID_SEQUENCE or INVALID_FORMAT
@@ -628,7 +620,6 @@ describe('License Plate Validator', () => {
       test('should validate valid PUBLIC license plates', () => {
         testCases.PUBLIC.valid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 Valid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(true);
           expect(result.error).toBeUndefined();
           expect(result.metadata?.type).toBe('PUBLIC');
@@ -642,7 +633,6 @@ describe('License Plate Validator', () => {
       test('should invalidate invalid PUBLIC license plates', () => {
         testCases.PUBLIC.invalid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 invalid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(false);
           expect(result.error).toBeDefined();
           // Error should be INVALID_SEQUENCE or INVALID_FORMAT
@@ -659,7 +649,6 @@ describe('License Plate Validator', () => {
       test('should validate valid DIPLOMATIC license plates', () => {
         testCases.DIPLOMATIC.valid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 Valid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(true);
           expect(result.error).toBeUndefined();
           expect(result.metadata?.type).toBe('DIPLOMATIC');
@@ -671,7 +660,6 @@ describe('License Plate Validator', () => {
       test('should invalidate invalid DIPLOMATIC license plates', () => {
         testCases.DIPLOMATIC.invalid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 invalid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(false);
           expect(result.error).toBeDefined();
           // Error should be INVALID_SEQUENCE or INVALID_REGION
@@ -688,7 +676,6 @@ describe('License Plate Validator', () => {
       test('should validate valid INTERNATIONAL_COOPERATIVE license plates', () => {
         testCases.INTERNATIONAL_COOPERATIVE.valid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 Valid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(true);
           expect(result.error).toBeUndefined();
           expect(result.metadata?.type).toBe('INTERNATIONAL_COOPERATIVE');
@@ -702,7 +689,6 @@ describe('License Plate Validator', () => {
       test('should invalidate invalid INTERNATIONAL_COOPERATIVE license plates', () => {
         testCases.INTERNATIONAL_COOPERATIVE.invalid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 invalid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(false);
           expect(result.error).toBeDefined();
           // Error should be INVALID_SEQUENCE or INVALID_REGION
@@ -719,7 +705,6 @@ describe('License Plate Validator', () => {
       test('should validate valid GOVERNMENT license plates', () => {
         testCases.GOVERNMENT.valid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 Valid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(true);
           expect(result.error).toBeUndefined();
           expect(result.metadata?.type).toBe('GOVERNMENT');
@@ -731,7 +716,6 @@ describe('License Plate Validator', () => {
       test('should invalidate invalid GOVERNMENT license plates', () => {
         testCases.GOVERNMENT.invalid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 invalid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(false);
           expect(result.error).toBeDefined();
           // Error should be INVALID_SEQUENCE or INVALID_FORMAT
@@ -748,7 +732,6 @@ describe('License Plate Validator', () => {
       test('should validate valid CIVIL_PROTECTION license plates', () => {
         testCases.CIVIL_PROTECTION.valid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 Valid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(true);
           expect(result.error).toBeUndefined();
           expect(result.metadata?.type).toBe('CIVIL_PROTECTION');
@@ -760,7 +743,6 @@ describe('License Plate Validator', () => {
       test('should invalidate invalid CIVIL_PROTECTION license plates', () => {
         testCases.CIVIL_PROTECTION.invalid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 invalid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(false);
           expect(result.error).toBeDefined();
           // Error should be INVALID_SEQUENCE or INVALID_FORMAT
@@ -777,7 +759,6 @@ describe('License Plate Validator', () => {
       test('should validate valid POLICE license plates', () => {
         testCases.POLICE.valid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 Valid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(true);
           expect(result.error).toBeUndefined();
           expect(result.metadata?.type).toBe('POLICE');
@@ -789,7 +770,6 @@ describe('License Plate Validator', () => {
       test('should invalidate invalid POLICE license plates', () => {
         testCases.POLICE.invalid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 invalid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(false);
           expect(result.error).toBeDefined();
           // Error should be INVALID_SEQUENCE or INVALID_FORMAT
@@ -806,7 +786,6 @@ describe('License Plate Validator', () => {
       test('should validate valid AUXILIARY_FORCES license plates', () => {
         testCases.AUXILIARY_FORCES.valid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 Valid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(true);
           expect(result.error).toBeUndefined();
           expect(result.metadata?.type).toBe('AUXILIARY_FORCES');
@@ -818,7 +797,6 @@ describe('License Plate Validator', () => {
       test('should invalidate invalid AUXILIARY_FORCES license plates', () => {
         testCases.AUXILIARY_FORCES.invalid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 invalid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(false);
           expect(result.error).toBeDefined();
           // Error should be INVALID_SEQUENCE or INVALID_FORMAT
@@ -835,7 +813,6 @@ describe('License Plate Validator', () => {
       test('should validate valid MILITARY license plates', () => {
         testCases.MILITARY.valid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 Valid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(true);
           expect(result.error).toBeUndefined();
           expect(result.metadata?.type).toBe('MILITARY');
@@ -847,7 +824,6 @@ describe('License Plate Validator', () => {
       test('should invalidate invalid MILITARY license plates', () => {
         testCases.MILITARY.invalid.forEach(lp => {
           const result = validateLicensePlate(lp);
-          console.log('🔺 invalid result: ', result, '\n \n LP : ', lp);
           expect(result.isValid).toBe(false);
           expect(result.error).toBeDefined();
           // Error should be INVALID_SEQUENCE or INVALID_FORMAT
