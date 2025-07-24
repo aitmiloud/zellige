@@ -63,6 +63,21 @@ import {
 } from './ice';
 
 /**
+ * Import license plate validation utilities
+ */
+import {
+  validateLicensePlate,
+  sanitizeLicensePlate,
+  isValidLicensePlate,
+  getLicensePlateType,
+  getLicensePlateRegion,
+  getLicensePlateMetadata,
+  getLicensePlateName,
+  getAllRegions,
+  getAllDiplomaticRegions,
+  getAllLicensePlateTypes,
+} from './license-plate';
+/**
  * Namespace containing all CIN-related validation functions
  */
 const cin = {
@@ -122,6 +137,21 @@ const ice = {
 };
 
 /**
+ * Namespace containing all license plate-related validation functions
+ */
+const licensePlate = {
+  validate: validateLicensePlate,
+  sanitize: sanitizeLicensePlate,
+  isValid: isValidLicensePlate,
+  getType: getLicensePlateType,
+  getRegion: getLicensePlateRegion,
+  getMetadata: getLicensePlateMetadata,
+  getName: getLicensePlateName,
+  getAllRegions: getAllRegions,
+  getAllDiplomaticRegions: getAllDiplomaticRegions,
+  getAllTypes: getAllLicensePlateTypes,
+};
+/**
  * Collection of all validator namespaces
  */
 export const validators = {
@@ -130,6 +160,7 @@ export const validators = {
   bank,
   phone,
   ice,
+  licensePlate,
 };
 
 /**
@@ -183,4 +214,20 @@ export {
   validateICE,
   validateControl,
   generateTestICE,
+};
+
+/**
+ * Direct exports of license plate validation functions for granular imports
+ */
+export {
+  validateLicensePlate,
+  sanitizeLicensePlate,
+  isValidLicensePlate,
+  getLicensePlateType,
+  getLicensePlateRegion,
+  getLicensePlateMetadata,
+  getLicensePlateName,
+  getAllRegions,
+  getAllDiplomaticRegions,
+  getAllLicensePlateTypes,
 };
