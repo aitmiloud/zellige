@@ -5,7 +5,7 @@ import { CINErrorCode, CINValidationResult } from '../types/cin';
  * Regular expression for Moroccan CIN validation
  * Format: 1-3 letters followed by 6 digits
  */
-const CIN_REGEX = /^[A-Z]{1,3}\d{6}$/;
+const CIN_REGEX = /^[A-Z]{1,3}\d{1,6}$/;
 
 /**
  * Sanitizes a CIN (Carte d'Identité Nationale) input string by removing whitespace and special characters
@@ -86,7 +86,7 @@ export function validateCIN(cin: unknown): CINValidationResult {
   if (!CIN_REGEX.test(sanitized)) {
     result.errors.push({
       code: CINErrorCode.INVALID_FORMAT,
-      message: 'Invalid CIN format. Must be 1-3 letters followed by 6 digits',
+      message: 'Invalid CIN format. Must be 1-3 letters followed by 1-6 digits',
     });
     return result;
   }
@@ -105,10 +105,10 @@ export function validateCIN(cin: unknown): CINValidationResult {
   }
 
   // Validate sequence
-  if (!/^[1-9]\d{5}$/.test(sequence)) {
+  if (!/^[1-9]\d{0,5}$/.test(sequence)) {
     result.errors.push({
       code: CINErrorCode.INVALID_SEQUENCE,
-      message: 'Sequence must be 6 digits and cannot start with 0',
+      message: 'Sequence must be 1-6 digits and cannot start with 0',
     });
     return result;
   }
