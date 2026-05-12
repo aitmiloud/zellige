@@ -34,7 +34,6 @@ describe('CIN Validator', () => {
         '', // empty
         'ABCD123456', // too many letters (>3)
         '123456', // no letters
-        'A12345', // too few digits
         'BE1234567', // too many digits
         'YY123456', // invalid letter combination
         'A123456A', // digits must be at end
@@ -48,6 +47,22 @@ describe('CIN Validator', () => {
         const result = validateCIN(cin);
         expect(result.isValid).toBe(false);
         expect(result.errors.length).toBeGreaterThan(0);
+      });
+    });
+
+    test('should validate CIN numbers with less than 6 digits', () => {
+      const shortCINs = [
+        'D3345', // 4 digits
+        'A1', // 1 digit
+        'BE12345', // 5 digits
+        'A12', // 2 digits
+        'BK999', // 3 digits
+      ];
+
+      shortCINs.forEach(cin => {
+        const result = validateCIN(cin);
+        expect(result.isValid).toBe(true);
+        expect(result.errors).toHaveLength(0);
       });
     });
 
@@ -118,7 +133,6 @@ describe('CIN Validator', () => {
       expect(isValidCIN('')).toBe(false);
       expect(isValidCIN('ABCD123456')).toBe(false);
       expect(isValidCIN('123456')).toBe(false);
-      expect(isValidCIN('A12345')).toBe(false);
       expect(isValidCIN('BE1234567')).toBe(false);
       expect(isValidCIN('YY123456')).toBe(false);
       expect(isValidCIN('A123456A')).toBe(false);
